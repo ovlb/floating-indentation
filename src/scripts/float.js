@@ -7,7 +7,7 @@ export default class FloatingIndentation {
     this.lineLength = this.$article.clientWidth
   }
 
-  init() {
+  align() {
     this.$p.forEach(($p) => {
       const isImageContainer =
           FloatingIndentation.hasImageAsNthChild($p, 'first') &&
