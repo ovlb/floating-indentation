@@ -5,11 +5,11 @@ import './styles.css'
 (function () {
   const $brainpicking = document.querySelector('.js-brainpicking')
   const FloatBrain = new FloatingIndentation($brainpicking)
-  FloatBrain.init()
+  FloatBrain.align()
 
   const $guardian = document.querySelector('.js-guardian')
   const FloatGuard = new FloatingIndentation($guardian)
-  FloatGuard.init()
+  FloatGuard.align()
 
 
   const tabbed = document.querySelector('.tabbed');
