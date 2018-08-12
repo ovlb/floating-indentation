@@ -4,6 +4,8 @@ export default class FloatingIndentation {
     this.$p = this.$article.querySelectorAll('p + p')
 
     this.baseIndent = parseInt(window.getComputedStyle(this.$p[0]).textIndent, 10)
+    this.minOffset = 2 * this.baseIndent
+    this.maxOffset = 5 * this.baseIndent
     this.lineLength = this.$article.clientWidth
   }
 
@@ -21,9 +23,9 @@ export default class FloatingIndentation {
 
       const { delta } = FloatingIndentation.getValues($previous)
 
-      if (delta < 3 * this.baseIndent) return
+      if (delta < this.minOffset || delta > (this.lineLength - this.maxOffset)) return
 
-      $p.style.textIndent = `${delta - 2 * this.baseIndent}px`
+      $p.style.textIndent = `${delta - this.minOffset}px`
     })
   }
 
