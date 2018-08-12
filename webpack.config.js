@@ -7,7 +7,10 @@ const webpack = require('webpack')
 const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main: './src/main.js',
+    float: './src/float.js'
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
